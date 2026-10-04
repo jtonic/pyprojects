@@ -15,5 +15,14 @@ dependencies = [
 [project.scripts]
 mycli = "mycli.cli:main"
 
+[project.optional-dependencies]
+dev = [
+    "types-requests",
+]
+
+[tool.basedpyright]
+pythonVersion = "3.14"
+typeCheckingMode = "standard"
+
 [tool.hatch.build.targets.wheel]
 packages = ["mycli"]

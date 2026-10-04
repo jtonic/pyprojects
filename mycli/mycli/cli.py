@@ -1,10 +1,13 @@
+from typing import Any
+
 import click
+
 from mycli.commands.users import users
 
 
 @click.group()
 @click.version_option()
-def main():
+def main() -> None:
     """My CLI tool."""
     pass
 
