@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mycli"
+version = "0.1.0"
+description = "A CLI tool"
+requires-python = ">=3.14"
+dependencies = [
+    "click",
+    "requests",
+]
+
+[project.scripts]
+mycli = "mycli.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mycli"]
