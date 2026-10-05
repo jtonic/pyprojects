@@ -8,8 +8,8 @@ version = "0.1.0"
 description = "A CLI tool"
 requires-python = ">=3.14"
 dependencies = [
-    "click",
-    "requests",
+    "click~=8.5",
+    "requests~=2.34",
 ]
 
 [project.scripts]
