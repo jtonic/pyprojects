@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "ms-python.vscode-python-envs",
+    "frhtylcn.pythonsnippets",
+    "kevinrose.vsc-python-indent",
+    "tamasfe.even-better-toml",
+    "ryu1kn.partial-diff",
+    "christian-kohler.path-intellisense",
+    "oderwat.indent-rainbow",
+    "almenon.arepl",
+    "techer.open-in-browser",
+    "jannek-aalto.shell-function-outline",
+    "timonwong.shellcheck",
+    "arjun.swagger-viewer",
+    "shardulm94.trailing-spaces",
+    "redhat.vscode-yaml",
+    "ahebrank.yaml2json",
+  ],
+}
