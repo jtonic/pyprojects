@@ -2,6 +2,7 @@ from typing import Any
 
 import click
 
+from mycli.commands.math import sum
 from mycli.commands.users import users
 
 
@@ -13,6 +14,7 @@ def main() -> None:
 
 
 main.add_command(users)
+main.add_command(sum)
 
 
 if __name__ == "__main__":
