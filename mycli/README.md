@@ -39,13 +39,14 @@ python -m pip cache purge
 pipx cache purge
 
 # drop the stale build artifacts of the project
-rm -rf build dist *.egg-info
+rm -rf build dist ./*.egg-info 2>/dev/null
 
-# remove the previously installed console command
+# remove the previously installed console command, with its whole venv and dependencies
 pipx uninstall mycli
 pipx list                       # confirm mycli is gone
 
-# rebuild the development environment
+# rebuild the development environment: `python -m venv` alone keeps the old packages
+rm -rf .venv                     # or: python -m venv --clear .venv
 python -m venv .venv
 source .venv/bin/activate
 pip install --no-cache-dir -e ".[dev]"
@@ -55,7 +56,8 @@ pipx install --force --pip-args="--no-cache-dir" -e .
 
 # verify
 pipx list
-pipx runpip mycli list | grep -E 'click|requests'
+pipx runpip mycli list | grep -E 'click|requests|truststore'
+pip list | grep -E 'click|requests|truststore'
 ```
 
 `--force` is what actually re-resolves the dependencies; a plain `pipx reinstall` reuses the recorded spec and ignores your edits. In a shell that is not mise-activated, prefix every command with `mise exec --`.
